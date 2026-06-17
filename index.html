@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Деревянные хозпостройки и дачные домики под заказ в Минске и РБ</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://jsdelivr.net" rel="stylesheet">
+    <!-- Google Fonts: Montserrat (для заголовков) и Inter (для текста) -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://jsdelivr.net">
+    
+    <style>
+        :root {
+            --wood-primary: #c27028; /* Теплый древесный акцент */
+            --wood-hover: #a85f20;
+            --slate-dark: #212529; /* Графитовый серый для текста */
+            --bg-light: #f8f9fa;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--slate-dark);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        .btn-wood {
+            background-color: var(--wood-primary);
+            color: #fff;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        .btn-wood:hover {
+            background-color: var(--wood-hover);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        .hero-section {
+            background: linear-gradient(rgba(33, 37, 41, 0.75), rgba(33, 37, 41, 0.85)), 
+                        url('https://unsplash.com') no-repeat center center / cover;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+        @media (max-width: 991.98px) {
+            .mobile-bottom-nav {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: #fff;
+                z-index: 1050;
+                box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
+                display: flex;
+                justify-content: space-around;
+                padding: 10px 0;
+            }
+            body { padding-bottom: 70px; }
+        }
+        @media (min-width: 992px) {
+            .mobile-bottom-nav { display: none; }
+        }
+        .product-card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--wood-primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+        .current-price {
+            color: var(--wood-primary);
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        .nav-pills .nav-link {
+            color: var(--slate-dark);
+            font-weight: 500;
+            border-radius: 30px;
+            padding: 8px 20px;
+            margin: 0 5px;
+            transition: all 0.3s;
+        }
+        .nav-pills .nav-link.active {
+            background-color: var(--wood-primary);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ШАПКА САЙТА -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm py-3">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <i class="bi bi-tree-fill text-success fs-3 me-2"></i>
+                <div>
+                    <span class="text-uppercase m-0 d-block lh-1" style="font-size: 1.25rem; letter-spacing: 1px;">Листвич Дилер</span>
+                    <small class="text-muted fw-normal" style="font-size: 0.75rem;">Деревянные конструкции под ключ</small>
+                </div>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav mx-auto text-uppercase fw-semibold" style="font-size: 0.85rem;">
+                    <li class="nav-item"><a class="nav-link px-3" href="#catalog">Каталог</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#benefits">Преимущества</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#guarantee">Гарантии</a></li>
+                </ul>
+                <div class="d-flex align-items-center flex-column flex-lg-row text-center text-lg-end">
+                    <a href="tel:+375298059997" class="text-decoration-none text-dark fw-bold mb-2 mb-lg-0 me-lg-3">
+                        <i class="bi bi-telephone-outbound-fill text-wood me-1"></i> +375 (29) 805-99-97
+                    </a>
+                    <a href="https://viber.click" class="btn btn-sm btn-success rounded-pill px-3">
+                        <i class="bi bi-chat-left-text-fill me-1"></i> Консультация
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+  
+
+      <!-- ГЛАВНЫЙ ЭКРАН -->
+    <section class="hero-section text-white py-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7 text-center text-lg-start">
+                    <span class="badge bg-success text-uppercase px-3 py-2 mb-3">Заводское качество</span>
+                    <h1 class="display-4 mb-3">Производство деревянных хозблоков и домиков</h1>
+                    <p class="lead mb-4 text-white-50">Изготовление по договору от 15 дней. Официальные дилеры завода «Листвич». Бесплатная сборка до 30 км от МКАД!</p>
+                    <div class="d-flex justify-content-center justify-content-lg-start gap-3">
+                        <a href="#catalog" class="btn btn-wood text-uppercase">Смотреть проекты</a>
+                        <a href="tel:+375298059997" class="btn btn-outline-light px-4 py-2 rounded-3">Позвонить</a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="bg-white text-dark p-4 p-md-5 rounded-4 shadow-lg">
+                        <h3 class="h4 mb-3 text-center fw-bold">Быстрый расчет</h3>
+                        <p class="text-muted text-center small mb-4">Оставьте заявку, зафиксируйте лучшую цену сезона</p>
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label small fw-medium">Что строим?</label>
+                                <select class="form-select">
+                                    <option>Хозблок / Бытовка</option>
+                                    <option>Дачный домик</option>
+                                    <option>Баня из бруса</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label small fw-medium">Ваш телефон</label>
+                                <input type="tel" class="form-control" placeholder="+375 (XX) XXX-XX-XX" required>
+                            </div>
+                            <button type="submit" class="btn btn-wood w-100 text-uppercase">Узнать стоимость с доставкой</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- КАТАЛОГ С ТАБАМИ -->
+    <section id="catalog" class="py-5 bg-light">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="display-6 fw-bold mb-2">Каталог наших построек</h2>
+                <p class="text-muted">Цены напрямую от производителя, без скрытых наценок</p>
+                
+                <!-- Вкладки категорий -->
+                <ul class="nav nav-pills justify-content-center mt-4" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="all-tab" data-bs-toggle="pill" data-bs-target="#pane-all" type="button" role="tab">Все объекты</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="hoz-tab" data-bs-toggle="pill" data-bs-target="#pane-hoz" type="button" role="tab">Хозблоки</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="dom-tab" data-bs-toggle="pill" data-bs-target="#pane-dom" type="button" role="tab">Домики</button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Сетка для динамических карточек из Google Таблицы -->
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pane-all" role="tabpanel">
+                    <div class="row g-4" id="products-container">
+                        <!-- Сюда JavaScript автоматически подставит карточки товаров -->
+                        <div class="col-12 text-center py-5">
+                            <div class="spinner-border text-warning" role="status"></div>
+                            <p class="mt-2 text-muted">Загрузка актуального каталога цен...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+  
+    <!-- МОБИЛЬНАЯ ПАНЕЛЬ СНИЗУ -->
+    <div class="mobile-bottom-nav">
+        <a href="tel:+375298059997" class="btn btn-dark rounded-pill px-4"><i class="bi bi-telephone-fill me-2"></i>Позвонить</a>
+        <a href="https://viber.click" class="btn btn-success rounded-pill px-4"><i class="bi bi-chat-left-text-fill me-2"></i>Viber</a>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://jsdelivr.net"></script>
+
+    <!-- СКРИПТ ПОДКЛЮЧЕНИЯ И ВЫВОДА КАРТОЧЕК -->
+    <script>
+        // Тестовая база данных. Позже мы подключим сюда твою Google Таблицу
+        const sampleProducts = [
+            {
+                id: 1,
+                category: "hoz",
+                title: "Хозблок 3х2 метра (Стандарт)",
+                old_price: "2 400 Br",
+                price: "2 150 Br",
+                image: "https://unsplash.com",
+                specs: "Размер: 3х2м | Кровля: Рубероид | Окно: 1 шт."
+            },
+            {
+                id: 2,
+                category: "hoz",
+                title: "Хозблок 6х3м с верандой (Хит)",
+                old_price: "6 800 Br",
+                price: "6 600 Br",
+                image: "https://unsplash.com",
+                specs: "Размер: 6х3м | Веранда: 2м | Материал: Имитация бруса"
+            },
+            {
+                id: 3,
+                category: "dom",
+                title: "Дачный домик «Уют-1»",
+                old_price: "12 500 Br",
+                price: "11 900 Br",
+                image: "https://unsplash.com",
+                specs: "Размер: 5х4м | Утепление: 50мм | Дверь: Массив"
+            }
+        ];
+
+        function renderProducts(products) {
+            const container = document.getElementById('products-container');
+            if(!container) return;
+            container.innerHTML = '';
+            
+            if(products.length === 0) {
+                container.innerHTML = '<div class="col-12 text-center text-muted py-4">Нет объектов в данной категории</div>';
+                return;
+            }
+            
+            products.forEach(item => {
+                container.innerHTML += `
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card product-card">
+                            <div class="position-relative">
+                                <img src="${item.image}" class="card-img-top" alt="${item.title}" style="height: 240px; object-fit: cover;">
+                                <span class="product-badge">Акция</span>
+                            </div>
+                            <div class="card-body d-flex flex-column p-4">
+                                <h4 class="h5 card-title fw-bold mb-2">${item.title}</h4>
+                                <p class="text-muted small mb-3"><i class="bi bi-gear-fill text-success me-1"></i> ${item.specs}</p>
+                                <div class="mt-auto pt-3 border-top d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <div class="old-price">${item.old_price}</div>
+                                        <div class="current-price">${item.price}</div>
+                                    </div>
+                                    <button class="btn btn-wood btn-sm">Заказать</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Логика переключения вкладок
+        document.addEventListener("DOMContentLoaded", () => {
+            renderProducts(sampleProducts);
+            
+            document.getElementById('all-tab')?.addEventListener('click', () => renderProducts(sampleProducts));
+            document.getElementById('hoz-tab')?.addEventListener('click', () => renderProducts(sampleProducts.filter(p => p.category === 'hoz')));
+            document.getElementById('dom-tab')?.addEventListener('click', () => renderProducts(sampleProducts.filter(p => p.category === 'dom')));
+        });
+    </script>
+</body>
+</html>
